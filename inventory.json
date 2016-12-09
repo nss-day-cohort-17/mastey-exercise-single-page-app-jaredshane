@@ -6,6 +6,20 @@
       "year": "2006",
       "price": "8999",
       "description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats, power everything."
+    },
+    {
+      "make": "Tesla",
+      "model": "Model S",
+      "year": "2012",
+      "price": "75000",
+      "description": "You'll be the talk of the town, but too poor to go out and actually go places with your car."
+    },
+    {
+      "make":"Volkswagen",
+      "model": "Jetta",
+      "year": "2017",
+      "price": "18000",
+      "description": "You won't be as much of a talk of the town, but you'll still be able to afford to go out and do stuff."
     }
   ]
 }
