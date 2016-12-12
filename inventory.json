@@ -20,6 +20,20 @@
       "year": "2017",
       "price": "18000",
       "description": "You won't be as much of a talk of the town, but you'll still be able to afford to go out and do stuff."
+    },
+    {
+      "make":"Volkswagen",
+      "model": "Jetta",
+      "year": "2017",
+      "price": "18000",
+      "description": "You won't be as much of a talk of the town, but you'll still be able to afford to go out and do stuff."
+    },
+    {
+      "make":"Volkswagen",
+      "model": "Jetta",
+      "year": "2017",
+      "price": "18000",
+      "description": "You won't be as much of a talk of the town, but you'll still be able to afford to go out and do stuff."
     }
   ]
 }

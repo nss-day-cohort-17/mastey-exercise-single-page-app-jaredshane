@@ -1,4 +1,6 @@
-var inventory = [];
+var inventory;
+var data;
+var insertData = document.getElementById('insertData')
 loadInventory();
 
 function populatePage (inventory) {
@@ -13,8 +15,23 @@ function populatePage (inventory) {
 
 function loadInventory (callback) {
   var inventoryLoader = new XMLHttpRequest();
+  var inventoryList = "";
+  inventoryLoader.addEventListener("load", function (e) {
+    data = JSON.parse(e.target.responseText);
+    console.log(data);
+    for (var i = 0; i < data.cars.length; i++) {
+      inventoryList = `<div class="col-xs-4 carCard">
+                          <div>Make: ${data.cars[i].make}</div>
+                          <div>Model: ${data.cars[i].model}</div>
+                          <div>Year: ${data.cars[i].year}</div>
+                          <div>Year: ${data.cars[i].price}</div>
+                          <div>Year: ${data.cars[i].description}</div>
+                        </div>`
+      insertData.innerHTML += inventoryList;
 
-  inventoryLoader.addEventListener("load", function () {
+    }
 
   });
+  inventoryLoader.open("GET", "inventory.json")
+  inventoryLoader.send()
 }
