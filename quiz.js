@@ -20,7 +20,7 @@ function loadInventory (callback) {
     data = JSON.parse(e.target.responseText);
     console.log(data);
     for (var i = 0; i < data.cars.length; i++) {
-      inventoryList = `<div class="col-xs-4 carCard">
+      inventoryList = `<div class="col-md-3 carCard">
                           <div>Make: ${data.cars[i].make}</div>
                           <div>Model: ${data.cars[i].model}</div>
                           <div>Year: ${data.cars[i].year}</div>
