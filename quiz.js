@@ -6,6 +6,7 @@ loadInventory();
 var targetCard;
 console.log(targetCard)
 
+
 function populatePage (inventory) {
   // Loop over the inventory and populate the page
   for (var i = 0; i < carData.cars.length; i++) {
@@ -27,8 +28,10 @@ function populatePage (inventory) {
     for (var i = 0; i < targetCard.length; i++) {
       console.log(targetCard[i])
       targetCard[i].addEventListener('click', function (e) { console.dir(e.target.parentElement)
+        if (e.target.parentElement = ) {
+          console.log('hello')
 
-        
+        }
       })
     }
   // Now that the DOM is loaded, establish all the event listeners needed
