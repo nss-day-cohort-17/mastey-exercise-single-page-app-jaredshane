@@ -6,18 +6,21 @@ loadInventory();
 var targetCard;
 console.log(targetCard)
 var carCard;
+var inputField;
+var description;
+var button;
 
 
 function populatePage (inventory) {
   // Loop over the inventory and populate the page
   for (var i = 0; i < carData.cars.length; i++) {
     inventoryList = `
-                      <div class = "carCard col-xs-4">
+                      <div class="carCard col-xs-4">
                         <div>Make: ${carData.cars[i].make}</div>
                         <div>Model: ${carData.cars[i].model}</div>
                         <div>Year: ${carData.cars[i].year}</div>
                         <div>Price: ${carData.cars[i].price}</div>
-                        <div>Description: ${carData.cars[i].description}</div>
+                        <div class="description">Description: ${carData.cars[i].description}</div>
                       </div>
                       `
     insertData.innerHTML += inventoryList;
@@ -46,9 +49,12 @@ function loadInventory (callback) {
 }
 
 function activateEvents() {
-  targetCard = document.getElementById('insertData').getElementsByClassName('carCard')
+  // targetCard = document.getElementById('insertData').getElementsByClassName('carCard')
 
   carCard = document.getElementsByClassName('carCard')
+  inputField = document.getElementById('inputField')
+  description = document.getElementsByClassName('description')
+  button = document.getElementById('btn')
 
   for (var i = 0; i < carCard.length; i++) {
     // console.log(targetCard[i])
@@ -67,7 +73,17 @@ function activateEvents() {
       }
       document.getElementById("inputField").focus()
 
+      button.addEventListener('click', function(e) {
+        for (var i = 0; i < carCard.length; i++) {
+          if (carCard[i].classList.contains('onClickEvent')) {
+            description[i].innerHTML = "Description: " + inputField.value
+
+          }
+        }
+      })
+
     })
 
+    }
+
   }
-}
