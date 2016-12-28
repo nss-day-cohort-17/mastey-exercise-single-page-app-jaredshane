@@ -5,6 +5,7 @@ var inventoryList = "";
 loadInventory();
 var targetCard;
 console.log(targetCard)
+var carCard;
 
 
 function populatePage (inventory) {
@@ -25,13 +26,24 @@ function populatePage (inventory) {
       }
     targetCard = document.getElementById('insertData').getElementsByClassName('carCard')
 
-    for (var i = 0; i < targetCard.length; i++) {
-      console.log(targetCard[i])
-      targetCard[i].addEventListener('click', function (e) { console.dir(e.target.parentElement)
-        if (e.target.parentElement = ) {
-          console.log('hello')
+    carCard = document.getElementsByClassName('carCard')
 
+    for (var i = 0; i < carCard.length; i++) {
+      // console.log(targetCard[i])
+      carCard[i].addEventListener('click', function (e) {
+        for (var i = 0; i < carCard.length; i++) {
+
+        //   console.dir(e.target.parentElement)
+        //  console.log(e)
+           if (e.target.parentNode === carCard[i]) {
+             carCard[i].classList.add("onClickEvent");
+           } else if (e.target === carCard[i]) {
+             carCard[i].classList.add("onClickEvent")
+           } else if (e.target.parentNode != carCard[i]) {
+             carCard[i].classList.remove("onClickEvent");
+           }
         }
+
       })
     }
   // Now that the DOM is loaded, establish all the event listeners needed
