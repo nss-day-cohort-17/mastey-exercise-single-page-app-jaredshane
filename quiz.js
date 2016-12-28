@@ -16,38 +16,17 @@ function populatePage (inventory) {
                         <div>Make: ${carData.cars[i].make}</div>
                         <div>Model: ${carData.cars[i].model}</div>
                         <div>Year: ${carData.cars[i].year}</div>
-                        <div>Year: ${carData.cars[i].price}</div>
-                        <div>Year: ${carData.cars[i].description}</div>
+                        <div>Price: ${carData.cars[i].price}</div>
+                        <div>Description: ${carData.cars[i].description}</div>
                       </div>
                       `
     insertData.innerHTML += inventoryList;
 
 
       }
-    targetCard = document.getElementById('insertData').getElementsByClassName('carCard')
 
-    carCard = document.getElementsByClassName('carCard')
-
-    for (var i = 0; i < carCard.length; i++) {
-      // console.log(targetCard[i])
-      carCard[i].addEventListener('click', function (e) {
-        for (var i = 0; i < carCard.length; i++) {
-
-        //   console.dir(e.target.parentElement)
-        //  console.log(e)
-           if (e.target.parentNode === carCard[i]) {
-             carCard[i].classList.add("onClickEvent");
-           } else if (e.target === carCard[i]) {
-             carCard[i].classList.add("onClickEvent")
-           } else if (e.target.parentNode != carCard[i]) {
-             carCard[i].classList.remove("onClickEvent");
-           }
-        }
-
-      })
-    }
   // Now that the DOM is loaded, establish all the event listeners needed
-  // activateEvents();
+  activateEvents();
 }
 
 // Load the inventory and send a callback function to be
@@ -64,4 +43,31 @@ function loadInventory (callback) {
   });
 
 
+}
+
+function activateEvents() {
+  targetCard = document.getElementById('insertData').getElementsByClassName('carCard')
+
+  carCard = document.getElementsByClassName('carCard')
+
+  for (var i = 0; i < carCard.length; i++) {
+    // console.log(targetCard[i])
+    carCard[i].addEventListener('click', function (e) {
+      for (var i = 0; i < carCard.length; i++) {
+
+      //   console.dir(e.target.parentElement)
+      //  console.log(e)
+         if (e.target.parentNode === carCard[i]) {
+           carCard[i].classList.add("onClickEvent");
+         } else if (e.target === carCard[i]) {
+           carCard[i].classList.add("onClickEvent")
+         } else if (e.target.parentNode != carCard[i]) {
+           carCard[i].classList.remove("onClickEvent");
+         }
+      }
+      document.getElementById("inputField").focus()
+
+    })
+
+  }
 }
