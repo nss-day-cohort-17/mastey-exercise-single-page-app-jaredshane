@@ -55,35 +55,46 @@ function activateEvents() {
   inputField = document.getElementById('inputField')
   description = document.getElementsByClassName('description')
   button = document.getElementById('btn')
+  var target;
 
   for (var i = 0; i < carCard.length; i++) {
-    // console.log(targetCard[i])
     carCard[i].addEventListener('click', function (e) {
-      for (var i = 0; i < carCard.length; i++) {
+        target = e.target;
+        removeClass();
+        addClass(e.target, "green")
 
-      //   console.dir(e.target.parentElement)
-      //  console.log(e)
-         if (e.target.parentNode === carCard[i]) {
-           carCard[i].classList.add("onClickEvent");
-         } else if (e.target === carCard[i]) {
-           carCard[i].classList.add("onClickEvent")
-         } else if (e.target.parentNode != carCard[i]) {
-           carCard[i].classList.remove("onClickEvent");
-         }
-      }
+
       document.getElementById("inputField").focus()
 
-      button.addEventListener('click', function(e) {
-        for (var i = 0; i < carCard.length; i++) {
-          if (carCard[i].classList.contains('onClickEvent')) {
-            description[i].innerHTML = "Description: " + inputField.value
+      // console.dir(e.target)
 
-          }
+      inputField.value = "";
+    })
+
+    inputField.addEventListener('keyup', function(e) {
+        if (target.classList.contains('green')) {
+          target.children[4].innerHTML = "Description: " + inputField.value
+          console.log(inputField.value)
         }
-      })
 
     })
 
     }
 
   }
+
+  function addClass (element, color) {
+    if (element.parentNode.classList.contains("carCard")) {
+      // console.log(element.parentNode)
+      element.parentNode.classList.add(color);
+    } else if (element.classList.contains("carCard")) {
+      // console.log(element.classList.contains(color));
+      element.classList.add(color)
+    }
+  }
+
+function removeClass () {
+   for (var i = 0; i < carCard.length; i++) {
+     carCard[i].classList.remove("green")
+  }
+}

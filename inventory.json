@@ -22,25 +22,25 @@
       "description": "You won't be as much of a talk of the town, but you'll still be able to afford to go out and do stuff."
     },
     {
-      "make":"Volkswagen",
-      "model": "Jetta",
+      "make":"Ford",
+      "model": "Focus",
       "year": "2017",
-      "price": "18000",
-      "description": "You won't be as much of a talk of the town, but you'll still be able to afford to go out and do stuff."
+      "price": "16775",
+      "description": "Focus technology will keep you informed and connected."
     },
     {
-      "make":"Volkswagen",
-      "model": "Jetta",
+      "make":"Hyundai",
+      "model": "Sonata",
       "year": "2017",
-      "price": "18000",
-      "description": "You won't be as much of a talk of the town, but you'll still be able to afford to go out and do stuff."
+      "price": "21950",
+      "description": "Its confident exterior is an exciting example of Hyundai’s signature design language."
     },
     {
-      "make":"Volkswagen",
-      "model": "Jetta",
+      "make":"Mitsubishi",
+      "model": "Outlander",
       "year": "2017",
-      "price": "18000",
-      "description": "You won't be as much of a talk of the town, but you'll still be able to afford to go out and do stuff."
+      "price": "19795",
+      "description": "Whether you're heading out for a grand adventure or the smallest errand, Outlander Sport is up for the challenge."
     }
   ]
 }
