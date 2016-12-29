@@ -72,9 +72,12 @@ function activateEvents() {
     })
 
     inputField.addEventListener('keyup', function(e) {
+        console.log(target)
         if (target.classList.contains('green')) {
           target.children[4].innerHTML = "Description: " + inputField.value
           // console.log(inputField.value)
+        } else if (target.parentNode.classList.contains('green')) {
+          target.parentNode.children[4].innerHTML = "Description: " + inputField.value
         }
 
     })
