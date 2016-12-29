@@ -1,0 +1,12 @@
+.carCard {
+  border: .2em solid black;
+  width: 25%;
+  margin: 2em;
+  height: 300px;
+}
+
+.green {
+  background-color: green;
+  border: 1em solid black;
+  color: white;
+}
